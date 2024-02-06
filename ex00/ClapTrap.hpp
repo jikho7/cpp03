@@ -1,12 +1,13 @@
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
-
+#include <iostream>
 #include <string>
 
 class ClapTrap
 {
 	public:
 		ClapTrap();
+		ClapTrap(std::string name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap &other); // copy, new obj
 		ClapTrap& operator=(const ClapTrap &other); // obj already existant
@@ -14,6 +15,7 @@ class ClapTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		int getHitPoints() const;
 
 	private:
 		std::string _name;
