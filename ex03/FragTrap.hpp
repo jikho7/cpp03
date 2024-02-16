@@ -1,15 +1,24 @@
 #ifndef FRAGTRAP_H
 #define FRAGTRAP_H
 
-class FragTrap
+#include <string>
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
 	public:
-		FragTrap();
+		FragTrap(int hitPoints, int attackDamage);
 		~FragTrap();
-		FragTrap(const FragTrap &other); // copy, new obj
-		FragTrap& operator=(const FragTrap &other); // obj already existant
+		FragTrap(const FragTrap &other);
+		FragTrap& operator=(const FragTrap &other);
 
-	private:
+		void attack(const std::string& target);
+		void highFivesGuys(void);
+
+	protected:
+	int _hitPoints;
+	int _attackDamage;
 
 };
 

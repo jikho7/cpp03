@@ -1,16 +1,27 @@
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#include "ScavTrap.hpp"
 
-class ScavTrap
+ScavTrap::ScavTrap(int energyPoints) : _energyPoints(energyPoints)
 {
-	public:
-	ScavTrap();
-	~ScavTrap();
-	ScavTrap(const ScavTrap &other); // copy, new obj
-	ScavTrap& operator=(const ScavTrap &other); // obj already existant
+	std::cout << "ScavTrap constructor called" << std::endl;
+}
 
-	private:
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap destructor called" << std::endl;
+}
 
-};
+void ScavTrap::guardGate()
+{
+	std::cout << "Gate Keeper mode : ON" << std::endl;
+}
 
-#endif
+void ScavTrap::attack(const std::string& target)
+{
+    if (this->_energyPoints <= 0 || this->_hitPoints <= 0)
+    {
+        std::cout << "No points left." << std::endl;
+        return ;
+    }
+    std::cout << "ScavTrap attack-ft: " << this->_name << " attacks " << "\033[1m" << target << "\033[0m" << ", causing " << "\033[1m" << this->_attackDamage << "\033[0m" << " points of damage !"<< std::endl;
+    this->_energyPoints--;
+}

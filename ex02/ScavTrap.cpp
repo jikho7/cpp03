@@ -54,6 +54,6 @@ void ScavTrap::attack(const std::string& target)
 		std::cout  << this->_name << " wants to attack but he has no hit points left." << std::endl;
 		return ;
 	}
-	std::cout << "(ScavTrap ft_attack) " << this->_name << " attacks " << "\033[1m" << target << "\033[0m" << ", causing " << "\033[1m" << this->_attackDamage << "\033[0m" << " points of damage !"<< std::endl;
+	std::cout << this->_name << " attacks " << "\033[1m" << target << "\033[0m" << ", causing " << "\033[1m" << this->_attackDamage << "\033[0m" << " points of damage !"<< std::endl;
 	this->_energyPoints--;
 }
