@@ -5,6 +5,13 @@ ScavTrap::ScavTrap(int energyPoints) : _energyPoints(energyPoints)
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+	std::cout << "(ScavTrap) Copy constructor called" << std::endl;
+	*this = other;
+	return;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;

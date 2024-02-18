@@ -15,15 +15,15 @@ class ClapTrap
 		ClapTrap& operator=(const ClapTrap &other);
 
 		void attack(const std::string& target);
+		unsigned int getHitPoints() const;
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		int getHitPoints() const;
 
 	protected:
 		std::string _name;
-		int _hitPoints;
+		unsigned int _hitPoints;
 		int _energyPoints;
-		int _attackDamage;
+		unsigned int _attackDamage;
 
 };
 

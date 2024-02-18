@@ -1,8 +1,19 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap("name", 100, 50, 20)
 {
 	std::cout << "(ScavTrap) Default constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+{
+	std::cout << "(ScavTrap) Parametric constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+{
+	//std::cout << "(ScavTrap) Copy constructor called" << std::endl;
+	*this = other;
 }
 
 ScavTrap::~ScavTrap()
@@ -10,9 +21,16 @@ ScavTrap::~ScavTrap()
 	std::cout << "(ScavTrap) Default destructor called " << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
-	std::cout << "(ScavTrap) Parametric constructor called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
+	if(this != &other)
+	{
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	return (*this);
 }
 
 void ScavTrap::guardGate()
@@ -30,17 +48,6 @@ void ScavTrap::guardGate()
 	std::cout << this->_name << " : Gate Keeper mode ON" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap &other)
-{
-	//std::cout << "Copy assignment operator called" << std::endl;
-	if(this != &other)
-	{
-		this->_hitPoints = other._hitPoints;
-		this->_energyPoints = other._energyPoints;
-		this->_attackDamage = other._attackDamage;
-	}
-	return (*this);
-}
 
 void ScavTrap::attack(const std::string& target)
 {

@@ -20,7 +20,9 @@ int main()
 	plop.takeDamage(55);
 	plop.attack("rat");
 	plop.beRepaired(10);
-
+	plop.attack("gobelin");
+	plop.beRepaired(10);
+	plop.takeDamage(55);
 	std::cout << "\n";
 
 	return (0);

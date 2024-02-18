@@ -21,6 +21,9 @@ int main()
 	plop.attack("gobelin");
 	plop.beRepaired(10);
 	plop.takeDamage(55);
+	plop.attack("gobelin");
+	plop.beRepaired(10);
+	plop.takeDamage(21);
 
 	std::cout << "\n";
 
@@ -33,6 +36,10 @@ int main()
 	Scav2 = Scav1;
 	std::cout << "Scav2 after cpy : Hit points: \033[1m" << Scav2.getHitPoints() << " \033[0mhit points." << std::endl;
 	Scav2.attack("gobelin");
+	Scav1.beRepaired(10);
+	Scav2.takeDamage(200);
+	Scav2.guardGate();
+	Scav2.attack("demon");
 	Scav1.beRepaired(10);
 	Scav2.takeDamage(200);
 	Scav2.guardGate();

@@ -5,6 +5,13 @@ FragTrap::FragTrap(int hitPoints, int attackDamage) : _hitPoints(hitPoints), _at
 	std::cout << "FragTrap constructor called" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
+	return;
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
