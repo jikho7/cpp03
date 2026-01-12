@@ -6,13 +6,16 @@
 int main()
 {
 	ClapTrap clap;
-	ScavTrap scav("Scav");
-	FragTrap fra("fra");
+	ScavTrap scav(50);
+	FragTrap fra(20, 30);
+	DiamondTrap diamond("diamond", 10, 20);
 
+	diamond.whoAmI();
+ 
 	scav.attack("zombie");
 	scav.beRepaired(10);
 	scav.takeDamage(5);
-	//std::cout << "Hit points: \033[1m" << plop.getHitPoints() << " \033[0mhit points." << std::endl;
+	// std::cout << "Hit points: \033[1m" << plop.getHitPoints() << " \033[0mhit points." << std::endl;
 	scav.getHitPoints();
 	scav.attack("gobelin");
 	scav.beRepaired(10);

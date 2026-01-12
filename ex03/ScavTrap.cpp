@@ -1,11 +1,13 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(){};
+
 ScavTrap::ScavTrap(int energyPoints) : _energyPoints(energyPoints)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap()
 {
 	std::cout << "(ScavTrap) Copy constructor called" << std::endl;
 	*this = other;

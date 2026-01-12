@@ -1,11 +1,13 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(){};
+
 FragTrap::FragTrap(int hitPoints, int attackDamage) : _hitPoints(hitPoints), _attackDamage(attackDamage)
 {
 	std::cout << "FragTrap constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap()
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;

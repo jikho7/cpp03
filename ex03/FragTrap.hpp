@@ -5,9 +5,10 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
+		FragTrap();
 		FragTrap(int hitPoints, int attackDamage);
 		~FragTrap();
 		FragTrap(const FragTrap &other);
