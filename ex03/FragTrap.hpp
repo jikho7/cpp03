@@ -9,7 +9,7 @@ class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap();
-		FragTrap(int hitPoints, int attackDamage);
+		FragTrap(std::string name);
 		~FragTrap();
 		FragTrap(const FragTrap &other);
 		FragTrap& operator=(const FragTrap &other);
@@ -18,8 +18,6 @@ class FragTrap : virtual public ClapTrap
 		void highFivesGuys(void);
 
 	protected:
-	int _hitPoints;
-	int _attackDamage;
 
 };
 
