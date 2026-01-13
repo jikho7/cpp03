@@ -22,6 +22,18 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+{
+	//std::cout << "Copy assignment operator called" << std::endl;
+	if(this != &other)
+	{
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	return (*this);
+}
+
 void ScavTrap::guardGate()
 {
 	std::cout << "Gate Keeper mode : ON" << std::endl;

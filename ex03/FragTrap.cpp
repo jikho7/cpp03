@@ -17,6 +17,18 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap()
 	return;
 }
 
+FragTrap& FragTrap::operator=(const FragTrap &other)
+{
+	//std::cout << "Copy assignment operator called" << std::endl;
+	if(this != &other)
+	{
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	return (*this);
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
