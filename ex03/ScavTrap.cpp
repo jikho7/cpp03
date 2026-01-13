@@ -1,10 +1,13 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){};
-
-ScavTrap::ScavTrap(int energyPoints) : _energyPoints(energyPoints)
+ScavTrap::ScavTrap() : ClapTrap("name", 100, 50, 20)
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "(ScavTrap) Default constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+{
+	std::cout << "(ScavTrap) Parametric constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap()
