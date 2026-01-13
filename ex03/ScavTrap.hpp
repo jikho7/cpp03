@@ -9,7 +9,7 @@ class ScavTrap : virtual public ClapTrap
 {
 	public:
 	ScavTrap();
-	ScavTrap(int energyPoints);
+	ScavTrap(std::string name);
 	~ScavTrap();
 	ScavTrap(const ScavTrap &other);
 	ScavTrap& operator=(const ScavTrap &other);
@@ -18,7 +18,7 @@ class ScavTrap : virtual public ClapTrap
 	void attack(const std::string& target);
 	
 	protected:
-	int _energyPoints;
+	
 };
 
 #endif
