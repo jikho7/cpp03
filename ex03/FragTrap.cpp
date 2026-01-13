@@ -1,10 +1,13 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(){};
-
-FragTrap::FragTrap(int hitPoints, int attackDamage) : _hitPoints(hitPoints), _attackDamage(attackDamage)
+FragTrap::FragTrap()
 {
-	std::cout << "FragTrap constructor called" << std::endl;
+	std::cout << "(FragTrap) Default constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
+{
+	std::cout << "(FragTrap) Parametric constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap()
